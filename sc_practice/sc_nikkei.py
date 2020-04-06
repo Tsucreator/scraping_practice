@@ -11,14 +11,13 @@ data = table.findAll('tr')  #ここで書くデータの行を取得
 dict_soba = {}
 #dataから各値を抽出
 for da in data:
-    th = da.find('th')
-    td = da.find('td')
-    
+    th = da.th
+    td = da.td
     # ここが一番大事？
     # 銘柄の文字列に余計な文字や記号が入ってしまっているので整形
-    cleaned_th = th.text.replace('\xa0', '').replace('※', '')
+    # replace (a,b)はaをbに変えるという構文
+    cleaned_th = th.text.replace('\xa0','').replace('※', '')
     #格納
-    print(td.text)
     dict_soba[cleaned_th] = td.text
 
 print(dict_soba)
