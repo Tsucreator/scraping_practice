@@ -18,6 +18,7 @@ for da in data:
     # 銘柄の文字列に余計な文字や記号が入ってしまっているので整形
     cleaned_th = th.text.replace('\xa0', '').replace('※', '')
     #格納
-    dict_soba[cleaned_th] = td[0].text
+    print(td.text)
+    dict_soba[cleaned_th] = td.text
 
 print(dict_soba)
